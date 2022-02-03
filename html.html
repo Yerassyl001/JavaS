@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="name"></p>
+          Year: <span id="year"></span>
+                <br>
+          Today is: <span id="weekday"> </span>
+                <br>
+          Date: <span id="day"> </span>
+                <br>
+          Month: <span id="month"> </span>
+                <br>
+          Time: <span id="time"> </span>
+                <br>
+          Days left until graduation: <span id="dayUntilGraduation"></span>
+                <br></br>
+          Num1<input type="num1" id="Int1" >
+                <br>
+          Num2<input type="num2" id="Int2" >
+                <br>
+          <button onclick="text1()"> Multiply </button>
+          <button onclick="text2()"> Divide </button>
+                <br></br>
+          Result:<span id="result"></span>
+<script>
+            const weekdays = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+            const d = new Date();
+            let name = "Rakhym Yerassyl CS-2113";
+            let year = d.getYear();
+            let weekday = weekdays[d.getDay()];
+            let day = d.getDate();
+            let month = d.getMonth();
+            let hour = (d.getHours());
+            let min = (d.getMinutes());
+            let sec = (d.getSeconds());
+            let time = hour + ":" + min + ":" + sec;
+            let timeOfGraduation = Math.round((1718820000000 - d.getTime())/(1000*60*60*24));
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("year").innerHTML = year+1900;
+            document.getElementById("weekday").innerHTML = weekday;
+            document.getElementById("day").innerHTML = day;
+            document.getElementById("month").innerHTML = month;
+            document.getElementById("time").innerHTML = time;
+            document.getElementById("dayUntilGraduation").innerHTML = timeOfGraduation;
+            function text1() {
+                var x = document.getElementById("Int1").value;
+                var y = document.getElementById("Int2").value;
+                document.getElementById("result").innerHTML = x * y;
+            }
+            function text2() {
+                var x = document.getElementById("Int1").value;
+                var y = document.getElementById("Int2").value;
+                document.getElementById("result").innerHTML = x / y;
+            }
+</script>
+</body>
+</html> 
